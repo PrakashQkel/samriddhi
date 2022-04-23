@@ -1,0 +1,21 @@
+ul{
+    list-style-type: none;
+}
+nav ul{
+    display: flex;
+}
+.nav-options{
+    text-decoration: none;
+    color: black;
+    padding-right: 0.625em;
+    font-size: larger;
+}
+.nav-options :visited {
+    color : black;
+}
+.sub-section{
+    display: flex;
+}
+.sub-section div{
+    width: 50%;
+}
