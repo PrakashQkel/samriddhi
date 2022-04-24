@@ -32,6 +32,4 @@ app.use('/', main)
 
 app.use(express.urlencoded({extended : false}))
 
-
-
 module.exports = app

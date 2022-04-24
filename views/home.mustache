@@ -7,6 +7,9 @@
         
     <body>
         <h1>SAMRIDDHI AGRI-COMMERCE</h1>
-        <a href="/login">Login</a>
+        <h2>Hello {{name}}</h2>
+        <form action="/logout?_method=DELETE" method="POST">
+            <button type="submit">Logout</button>
+        </form>
     </body>
 </html>
