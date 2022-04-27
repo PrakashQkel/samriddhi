@@ -2,14 +2,6 @@
 const vertex = require('vertex360')({ site_id: process.env.TURBO_APP_ID })
 const express = require('express')
 
-const bodyParser = require('body-parser');
-const mysql = require('mysql2');
-const bcrypt = require('bcrypt');
-const cookieParser = require('cookie-parser');
-const path = require('path');
-const session = require('express-session');
-const passport = require('passport');
-const flash = require('express-flash-messages');
 
 const app = express() // initialize app
 

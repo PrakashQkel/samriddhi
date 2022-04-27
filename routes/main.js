@@ -7,20 +7,19 @@ const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
-const initializePassport = require('../util/passport_config')
+const initializePassport = require('../util/passport_config').initializeLocal
+const initializeFacebookPassport = require('../util/passport_config').initializeFacebook
 
 async function getUserByEmail(email){
     var user
     db.query("select * from USER where email = '"+email+'"', (err, rows) => {
-        //how to return the rows???
         user = rows[0]
     })
     return await user
 }
 
-initializePassport(
-    passport
-)
+initializePassport(passport)
+initializeFacebookPassport(passport)
 
 
 router.use(express.urlencoded({extended : false}))
@@ -36,7 +35,8 @@ router.use(methodOverride('_method'))
 
 
 router.get('/', checkAuthenticated, (req, res, next) => {
-    res.render('home', {name: req.user.name})
+    res.render('home', {user: req.user})
+    console.log(req.user)
 })
 
 
@@ -48,6 +48,15 @@ router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
      successRedirect: '/',
      failureRedirect: '/login',
      failureFlash: true,
+}))
+
+router.get('/auth/facebook', checkNotAuthenticated, passport.authenticate('facebook', {
+    scope: ['public_profile', 'email']
+}))
+
+router.get('/auth/facebook/callback', checkNotAuthenticated, passport.authenticate('facebook', {
+    successRedirect: '/',
+    failureRedirect: '/login',
 }))
 
 router.get('/signup', checkNotAuthenticated, (req, res, next) => {
@@ -92,15 +101,16 @@ router.delete('/logout', (req, res) => {
 })
 
 function checkAuthenticated(req, res, next){
-    if(req.isAuthenticated()) return next()
+    if(req.isAuthenticated()) 
+        return next()
 
     res.redirect('/login')
 }
 
 function checkNotAuthenticated(req, res, next){
-    if(req.isAuthenticated()){
+    if(req.isAuthenticated())
         res.redirect('/')
-    }
+
     next()
 }
 

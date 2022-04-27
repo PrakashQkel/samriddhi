@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const { authenticate } = require('passport')
 const db = require('../util/database')
 
+//login using email
 function initialize(passport){
 
     const authenticateUser = async (email, password, done) => {
@@ -45,7 +46,29 @@ function initialize(passport){
     })
 }
 
-module.exports = initialize
+//login using facebook
+const FacebookStrategy = require('passport-facebook').Strategy
 
+function initializeFacebookPassport(passport){
+    passport.use(new FacebookStrategy({
+        clientID: '565515104834083', 
+        clientSecret: '05ff505cd421e9a2c79aacdbeb43c060', 
+        callbackURL: 'http://localhost:3000/auth/facebook/callback'},
+        (accessToken, refreshToken, profile, done) => done(null, profile)
+    ))
+
+    passport.serializeUser((user, done) => {
+        done(null, user);
+    });
+      
+    passport.deserializeUser((obj, done) => {
+        done(null, obj);
+    });
+}
+
+module.exports = {
+    initializeLocal : initialize,
+    initializeFacebook : initializeFacebookPassport
+}
 
 
