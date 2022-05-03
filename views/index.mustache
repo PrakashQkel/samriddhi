@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/home.css">
+    
+    <title>Homepage</title>
+</head>
+<body>
+    <!-- Background image -->
+    <div class="bg-image" style="background-image: url('./images/vege2.jpg'); background-size: cover;">
+        <!-- Nav bar -->
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark py-2 fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand">Samriddhi</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#faq" class="nav-link">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link">Login <i class="bi bi-person-circle"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Showcase area -->
+ 
+        <section class="bg-transparent text-dark p-5 text-center">
+            <div class="container" style="padding-top: 18%; padding-bottom: 10%;">
+                <h1 id="main-title">Fresh. Cheap. Organic.</h1>
+                <p class="lead my-4" style="width: 400px; margin: auto;">Samriddhi brings consumers, producers and transporters together without the hassle of a third-party retailer.</p>
+                <a href="#about" class="btn btn-outline-dark btn-lg" id="learn-more">
+                    Learn more
+                </a>
+            </div>
+        </section>
+    </div>
+    
+    <!-- About -->
+    <section class="bg-dark text-light p-5" id="about">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg m-2">
+                    <div class="card bg-light text-dark p-2">
+                        <div class="card-body text-center">
+                            <img src="./images/farmer.JPG" class="img-fluid w-50" alt="">
+                            <h3 class="card-title mt-4 mb-3">Farmers</h3>
+                            <p class="card-text">Increase your business by placing sales online, and enjoy increased profitability without hassle.</p>
+                            <a href="#" class="btn btn-outline-dark">Announce Sales</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg m-2">
+                    <div class="card bg-light text-dark p-2">
+                        <div class="card-body text-center">
+                            <img src="./images/Consumer.JPG" class="img-fluid w-50" alt="">
+                            <h3 class="card-title mt-4 mb-3">Consumers</h3>
+                            <p class="card-text">Enjoy fresh organic fruits and vegetables that are delivered directly at your doorstep.</p>
+                            <a href="#" class="btn btn-outline-dark">Place Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg m-2">
+                    <div class="card bg-light text-dark p-2">
+                        <div class="card-body text-center">
+                            <img src="./images/transport.JPG" class="img-fluid w-50" alt="">
+                            <h3 class="card-title mt-4 mb-3">Transporters</h3>
+                            <p class="card-text">Got a truck lying around but no one to hire it? Join us in delivery with attractive commissions.</p>
+                            <a href="#" class="btn btn-outline-dark">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- FAQ -->
+    <section class="p-5" id="faq">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Q: How is order matching done?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">A: Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Q: What is the delivery time?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">A: Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Q: Can I return the items if they are not up to my expectations?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">A: Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <!-- Contact  -->
+    <section class="bg-dark text-light p-5" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h2 class="text-center mb-4">Contact Us</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item  bg-dark text-light">CMR Institute of Technology, 132 AECS Layout, Kundalahalli, Bengaluru 560037</li>
+                        <li class="list-group-item  bg-dark text-light">95134-09378</li>
+                    </ul>
+                </div>
+                <div class="col-md-8 text-center">
+                    <h2 class="text-center mb-5">Keep in Touch</h2>
+                    <a href="#"><i class="bi bi-twitter" id="social-handles"></i></a>
+                    <a href="#"><i class="bi bi-linkedin" id="social-handles"></i></a>
+                    <a href="#"><i class="bi bi-facebook" id="social-handles"></i></a>
+                    <a href="#"><i class="bi bi-whatsapp" id="social-handles"></i></a>
+                    <a href="#"><i class="bi bi-instagram" id="social-handles"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white p-5 text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; 2022 Samriddhi</p>
+
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1 text-white"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Login modal
+    <div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="" class="text-center"></form>
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-envelope"></i></span>
+                        <input type="text" class="form-control" name="email" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
+                    </div>
+                    
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
+                        <input type="text" class="form-control" name="your_pass" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-3">
+                        <input type="submit" class="btn btn-primary" name="signin" value="Log in" aria-label="Log in" aria-describedby="addon-wrapping">
+                    </div>
+    
+                </form>
+
+                <a href="" class="" data-bs-toggle="modal" data-bs-target="#signup">Create an account</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Sign Up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="" class="text-center"></form>
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" name="name" placeholder="Name" aria-label="Name" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-envelope"></i></span>
+                        <input type="text" class="form-control" name="email" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
+                    </div>
+                    
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
+                        <input type="text" class="form-control" name="pass" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
+                        <input type="text" class="form-control" name="re_pass" placeholder="Repeat Password" aria-label="Password" aria-describedby="addon-wrapping">
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-3">
+                        <input type="submit" class="btn btn-primary" name="signup" value="Sign Up" aria-label="Log in" aria-describedby="addon-wrapping">
+                    </div>
+    
+                </form>
+
+                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

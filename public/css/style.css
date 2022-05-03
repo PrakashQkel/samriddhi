@@ -593,4 +593,9 @@ label.valid {
     margin-right: 0px;
     margin-bottom: 10px; } }
 
+select{
+  border: white;
+  outline-style: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */

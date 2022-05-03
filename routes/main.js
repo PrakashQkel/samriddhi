@@ -39,6 +39,9 @@ router.get('/', checkAuthenticated, (req, res, next) => {
     console.log(req.user)
 })
 
+router.get('/index', checkNotAuthenticated, (req, res, next) => {
+    res.render('index')
+})
 
 router.get('/login', checkNotAuthenticated, (req, res, next) => {
     res.render('login')
@@ -97,14 +100,14 @@ router.post('/signup', checkNotAuthenticated, async (req, res) => {
 
 router.delete('/logout', (req, res) => {
     req.logOut()
-    res.redirect('/login')
+    res.redirect('/index')
 })
 
 function checkAuthenticated(req, res, next){
     if(req.isAuthenticated()) 
         return next()
 
-    res.redirect('/login')
+    res.redirect('/index')
 }
 
 function checkNotAuthenticated(req, res, next){

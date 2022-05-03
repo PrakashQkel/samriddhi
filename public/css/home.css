@@ -1,21 +1,18 @@
-ul{
-    list-style-type: none;
+#main-title{
+    font-size: 500%;
 }
-nav ul{
-    display: flex;
+
+#social-handles{
+    color: #f8f9fa;
+    margin: 0px 7px 0px 7px;
+    padding: 4px 10px 6px 10px;
+    font-size: 30px;
+    border: solid 3px #f8f9fa; 
+    border-radius: 8px
 }
-.nav-options{
-    text-decoration: none;
-    color: black;
-    padding-right: 0.625em;
-    font-size: larger;
+
+#social-handles:hover{
+    color: #212529;
+    background-color: #f8f9fa;
 }
-.nav-options :visited {
-    color : black;
-}
-.sub-section{
-    display: flex;
-}
-.sub-section div{
-    width: 50%;
-}
+
