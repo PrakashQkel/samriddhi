@@ -16,3 +16,8 @@
     background-color: #f8f9fa;
 }
 
+body::before{
+    display: block;
+    content: '';
+    height: 55px;
+}

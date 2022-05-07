@@ -50,7 +50,7 @@ router.get('/login', checkNotAuthenticated, (req, res, next) => {
 
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
      successRedirect: '/',
-     failureRedirect: '/login',
+     failureRedirect: '/index',
      failureFlash: true,
 }))
 
@@ -76,7 +76,7 @@ router.post('/signup', checkNotAuthenticated, async (req, res) => {
 
         if(pass != re_pass){
             console.log("Passwords donot match!")
-            res.redirect('/signup')
+            res.render('index', {error: 'Passwords do not match!'})
         }
         
         else{
@@ -85,24 +85,40 @@ router.post('/signup', checkNotAuthenticated, async (req, res) => {
             db.query("insert into USER(name, email, pass) values('"+name+"', '"+email+"', '"+hashedPwd+"');", (err) => {
                 if(err){
                     console.log("Email already in use")
-                    res.redirect('/signup')
+                    res.render('index', {error: 'Email already in use'})
                 }
                 else {
                     console.log("Registered")
-                    res.redirect('/login')
+                    res.redirect('/')
                 }
             })
         }
         
     } catch (error) {
         console.log(error)
-        res.redirect('/signup')
+        res.redirect('/index')
     }
 })
 
 router.delete('/logout', (req, res) => {
     req.logOut()
     res.redirect('/index')
+})
+
+router.get('/twitter', (req, res) => {
+    res.redirect("https://www.twitter.com")
+})
+router.get('/facebook', (req, res) => {
+    res.redirect("https://www.facebook.com")
+})
+router.get('/linkedin', (req, res) => {
+    res.redirect("https://www.linkedin.com")
+})
+router.get('/whatsapp', (req, res) => {
+    res.redirect("https://www.whatsapp.com")
+})
+router.get('/instagram', (req, res) => {
+    res.redirect("https://www.instagram.com")
 })
 
 function checkAuthenticated(req, res, next){
