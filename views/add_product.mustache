@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    {{>home_nav}}
+    <div style="height:60px"></div>
+
+    <section class="bg-light text-dark p-5">
+        <div class="container" style="width:600px;">
+            <h2 class="mb-4">Add Product</h2>
+            <form action="/product/add" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="product_name" class="form-label">Product Name:</label>
+                    <input type="text" class="form-control" id="product_name" name="product_name">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price:</label>
+                    <input type="text" class="form-control" id="price" name="price">
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea class="form-control" id="description" name="description"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="product-img" class="form-label">Upload image:</label>
+                    <input type="file" class="form-control" id="product-img" name="product-img">
+                </div>
+
+                <div class="mb-3">
+                    <input type="submit" class="btn btn-outline-dark" value="Add product">
+                </div>
+            </form>
+            
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

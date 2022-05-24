@@ -18,8 +18,14 @@ const config = {
 vertex.configureApp(app, config)
 
 
-const main = require('./routes/main')
-app.use('/', main)
+const auth = require('./routes/auth').router
+app.use('/', auth)
+
+const circle = require('./routes/circle')
+app.use('/', circle)
+
+const product = require('./routes/product')
+app.use('/', product)
 
 app.use(express.urlencoded({extended : false}))
 

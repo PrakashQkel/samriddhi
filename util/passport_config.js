@@ -34,15 +34,14 @@ function initialize(passport){
 
     passport.use(new LocalStrategy({usernameField: 'email', passwordField: 'password'}, authenticateUser))
 
-    passport.serializeUser((user, done) => done(null, user.id))
+    passport.serializeUser((user, done) => done(null, user.User_ID))
 
     passport.deserializeUser((id, done) => {
         var data
-        db.query("select * from USER where id = "+id, (err, rows)=>{
+        db.query("select * from USER where User_ID = "+id, (err, rows)=>{
             data = rows[0]
             return done(null, data)
         })
-
     })
 }
 

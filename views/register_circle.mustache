@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <!-- bootstrap icons-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+     <link rel="stylesheet" href="./css/style.css">
+
+    <title>Register Circle</title>
+
+    <style>
+        #current-location{
+            font-size: 22px;
+        }
+        #current-location:hover{
+            color: darkslategrey;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    {{>home_nav}}
+    <div style="height:60px"></div>
+
+    
+
+    <section class="bg-light text-dark p-5">
+        <div class="container" style="width:600px;">
+            <h2 class="mb-4">Register Circle</h2>
+            <form action="/circle/register" method="POST">
+                <div class="mb-3">
+                    <label for="circle_type" class="form-label">Select Circle Type:</label>
+                    <select class="form-select" aria-label="Default select example" id="circle_type" name="circle_type">
+                        <option value="Buying circle">Buying circle</option>
+                        <option value="Selling circle">Selling circle</option>
+                        <option value="Transport circle">Transport circle</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="circle_name" class="form-label">Name of Circle:</label>
+                    <input type="text" class="form-control" id="circle_name" name="circle_name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea class="form-control" id="description" name="description"></textarea>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="location" class="form-label">Location:</label>
+                    <div class="col-5">
+                        <input type="text" class="form-control" id="lat" name="lat" placeholder="Latitude">
+                    </div>
+                    <div class="col-5">
+                        <input type="text" class="form-control" id="lng" name="lng" placeholder="Longitude">
+                    </div>
+                    <div class="col-2">
+                        <i onclick="getLocation()" id="current-location" class="bi bi-geo-alt-fill"></i>
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <input type="submit" class="btn btn-outline-dark" value="Register">
+                </div>
+            </form>
+            
+        </div>
+    </section>
+    
+    
+    <script>
+        //FOR RETREIVING CURRENT USER LOCATION
+        var lat = document.getElementById("lat");
+        var lng = document.getElementById("lng");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    // Success function
+                    showPosition, 
+                    // Error function
+                    null, 
+                    // Options. See MDN for details.
+                    {
+                       enableHighAccuracy: true,
+                       timeout: 5000,
+                       maximumAge: 0
+                    });
+            } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        
+        function showPosition(position) {
+            lat.value = position.coords.latitude
+            lng.value = position.coords.longitude
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
