@@ -12,6 +12,7 @@ const initializeFacebookPassport = require('../util/passport_config').initialize
 
 async function getUserByEmail(email){
     var user
+    //read query
     db.query("select * from USER where email = '"+email+'"', (err, rows) => {
         user = rows[0]
     })
@@ -79,6 +80,7 @@ router.post('/signup', checkNotAuthenticated, async (req, res) => {
         
         else{
             const hashedPwd = await bcrypt.hash(req.body.pass, 10)
+            //write query
             db.query("insert into USER(name, email, pass) values('"+name+"', '"+email+"', '"+hashedPwd+"');", (err) => {
                 if(err){
                     console.log("Email already in use")
