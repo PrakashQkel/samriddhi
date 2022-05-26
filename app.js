@@ -27,6 +27,9 @@ app.use('/', circle)
 const product = require('./routes/product')
 app.use('/', product)
 
+const cart = require('./routes/cart')
+app.use('/', cart)
+
 app.use(express.urlencoded({extended : false}))
 
 module.exports = app

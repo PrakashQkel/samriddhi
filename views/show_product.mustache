@@ -19,7 +19,7 @@
     <section class="p-5">
         <div class="d-flex flex-wrap">
             {{#products}}
-            <div class="card m-2 p-4" style="width: 18rem;">
+            <div class="card m-2 p-4 bg-light" style="width: 18rem;">
                 <img src="../images/uploads/{{Image_path}}" class="card-img-top mb-4" alt="appleimg" style="height: 200px">
                 <div class="card-body p-0 mb-2">
                     <h5 class="card-title">{{P_Name}}</h5>
@@ -30,8 +30,7 @@
                     <p class="card-text">{{Description}}</p>
 
                 </div>
-                <form action="" method="POST">
-                    <input type="hidden" name="Product_ID" value="{{Product_ID}}"/>
+                <form action="/cart/add/{{Product_ID}}" method="GET">
                     <input type="submit" class="btn btn-outline-dark p-2 align-self-start" value="Add to cart">
                 </form>
             </div>
